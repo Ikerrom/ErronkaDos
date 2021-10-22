@@ -1,4 +1,4 @@
-package com.example.erronkauno;
+package com.example.erronkados;
 
 import org.junit.Test;
 

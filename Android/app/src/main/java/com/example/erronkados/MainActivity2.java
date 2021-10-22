@@ -1,4 +1,4 @@
-package com.example.erronkauno;
+package com.example.erronkados;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Bitmap;
@@ -6,9 +6,11 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.util.*;
 import android.graphics.BitmapFactory;
+
+import com.example.erronkauno.R;
+
 
 public class MainActivity2 extends AppCompatActivity {
 
