@@ -20,9 +20,9 @@ public class Main {
 		
 		SaleOrderDao pd = appContext.getBean(SaleOrderDao.class);
 		
-		ApplicationContext appContext = new AnnotationConfigApplicationContext(SQLserverKonfigurazioa.class);
+		ApplicationContext appContext1 = new AnnotationConfigApplicationContext(SQLserverKonfigurazioa.class);
 		
-		PruduktuaDao sd = appContext.getBean(PruduktuaDao.class);
+		ProduktuaDao sd = appContext1.getBean(ProduktuaDao.class);
 		
 		List <SaleOrder> produktuak = pd.getAll();
 		
@@ -33,7 +33,7 @@ public class Main {
 		}
 		
 		
-		((AnnotationConfigApplicationContext) appContext).close();
+		((AnnotationConfigApplicationContext) appContext1).close();
 
 	}
 
