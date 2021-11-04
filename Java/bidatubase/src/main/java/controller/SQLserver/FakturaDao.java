@@ -18,4 +18,16 @@ public class FakturaDao {
     public List<Faktura> getAll() {
     	return entityManager.createQuery("from Faktura").getResultList();
     }
+    
+    public Faktura getById(long id) {
+        return entityManager.find(Faktura.class, id);
+    }
+
+    /**
+     * Actualiza el us...uario proporcionado
+     */
+    public void update(Faktura film) {
+        entityManager.merge(film);
+        return;
+    }
 }

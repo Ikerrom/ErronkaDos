@@ -26,5 +26,16 @@ public class ErosketaDao {
     	return entityManager.createQuery("from Erosketa").getResultList();
     }
 
+    public Erosketa getById(long id) {
+        return entityManager.find(Erosketa.class, id);
+    }
+
+    /**
+     * Actualiza el us...uario proporcionado
+     */
+    public void update(Erosketa film) {
+        entityManager.merge(film);
+        return;
+    }
     
 }

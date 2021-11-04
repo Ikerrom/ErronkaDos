@@ -33,7 +33,7 @@ public class SQLserverKonfigurazioa {
         dataSource.setDriverClassName(env.getProperty("dbout.driver"));
         dataSource.setUrl(env.getProperty("dbout.url"));
         dataSource.setUsername(env.getProperty("dbout.username"));
-        dataSource.setPassword(env.getProperty("dout.password"));
+        dataSource.setPassword(env.getProperty("dbout.password"));
         return dataSource;
     }
 
@@ -50,7 +50,7 @@ public class SQLserverKonfigurazioa {
         entityManagerFactory.setDataSource(dataSourceOut());
 
         // Le indicamos la ruta donde tiene que buscar las clases anotadas
-        entityManagerFactory.setPackagesToScan(env.getProperty("entitymanagerin.packagesToScan"));
+        entityManagerFactory.setPackagesToScan(env.getProperty("entitymanagerout.packagesToScan"));
 
         // Implementación de JPA a usar: Hibernate
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -58,9 +58,9 @@ public class SQLserverKonfigurazioa {
 
         // Propiedades de Hibernate
         Properties additionalProperties = new Properties();
-        additionalProperties.put("hibernate.dialect", env.getProperty("hibernatein.dialect"));
-        additionalProperties.put("hibernate.show_sql", env.getProperty("hibernatein.show_sql"));
-        additionalProperties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernatein.hbm2ddl.auto"));
+        additionalProperties.put("hibernate.dialect", env.getProperty("hibernateout.dialect"));
+        additionalProperties.put("hibernate.show_sql", env.getProperty("hibernateout.show_sql"));
+        additionalProperties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernateout.hbm2ddl.auto"));
         entityManagerFactory.setJpaProperties(additionalProperties);
 
         return entityManagerFactory;

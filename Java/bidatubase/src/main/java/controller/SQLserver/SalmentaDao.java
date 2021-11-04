@@ -17,4 +17,16 @@ public class SalmentaDao {
     public List<Salmenta> getAll() {
     	return entityManager.createQuery("from Salmenta").getResultList();
     }
+    
+    public Salmenta getById(long id) {
+        return entityManager.find(Salmenta.class, id);
+    }
+
+    /**
+     * Actualiza el us...uario proporcionado
+     */
+    public void update(Salmenta film) {
+        entityManager.merge(film);
+        return;
+    }
 }

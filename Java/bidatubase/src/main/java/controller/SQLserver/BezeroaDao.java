@@ -18,4 +18,16 @@ public class BezeroaDao {
     public List<Bezeroa> getAll() {
     	return entityManager.createQuery("from Bezeroa").getResultList();
     }
+    
+    public Bezeroa getById(long id) {
+        return entityManager.find(Bezeroa.class, id);
+    }
+
+    /**
+     * Actualiza el us...uario proporcionado
+     */
+    public void update(Bezeroa film) {
+        entityManager.merge(film);
+        return;
+    }
 }

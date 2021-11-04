@@ -1,8 +1,7 @@
 package view;
 
-import java.util.List;
+import java.util.Arrays;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -16,24 +15,24 @@ import model.SQLserver.*;
 public class Main {
 
 	public static void main(String[] args) {
-		ApplicationContext appContext = new AnnotationConfigApplicationContext(PostgreKonfigurazioa.class);
-		
-		SaleOrderDao pd = appContext.getBean(SaleOrderDao.class);
-		
-		ApplicationContext appContext1 = new AnnotationConfigApplicationContext(SQLserverKonfigurazioa.class);
-		
-		ProduktuaDao sd = appContext1.getBean(ProduktuaDao.class);
-		
-		List <SaleOrder> produktuak = pd.getAll();
-		
-		for (SaleOrder pt : produktuak) {
-			
-				System.out.println(pt.getName());
 
-		}
+		ApplicationContext appContext = new AnnotationConfigApplicationContext(SQLserverKonfigurazioa.class);
+		
+		ProduktuaDao sd = appContext.getBean(ProduktuaDao.class);
+		
+	/*	Produktua p = new Produktua();
+		p.setBolumena(2);
+		p.setDeskripzioa("");
+		p.setIzena("Aaa");
+		p.setPisua(2);
+		p.setId(1);
+		sd.create(p);*/
+		
+		System.out.println(sd.getAll().size());
 		
 		
-		((AnnotationConfigApplicationContext) appContext1).close();
+		
+		((AnnotationConfigApplicationContext) appContext).close();
 
 	}
 
