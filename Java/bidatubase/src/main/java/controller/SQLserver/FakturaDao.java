@@ -15,18 +15,18 @@ public class FakturaDao {
      * Devuelve todos los usuarios de la base de datos.
      */
     @SuppressWarnings("unchecked")
-    public List<Faktura> getAll() {
+    public List<Fakturak> getAll() {
     	return entityManager.createQuery("from Faktura").getResultList();
     }
     
-    public Faktura getById(long id) {
-        return entityManager.find(Faktura.class, id);
+    public Fakturak getById(long id) {
+        return entityManager.find(Fakturak.class, id);
     }
 
     /**
      * Actualiza el us...uario proporcionado
      */
-    public void update(Faktura film) {
+    public void update(Fakturak film) {
         entityManager.merge(film);
         return;
     }

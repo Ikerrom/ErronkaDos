@@ -19,23 +19,23 @@ public class ProduktuaDao {
      * Devuelve todos los usuarios de la base de datos.
      */
     @SuppressWarnings("unchecked")
-    public List<Produktua> getAll() {
+    public List<Produktuak> getAll() {
     	return entityManager.createQuery("from Produktua").getResultList();
     }
     
-    public Produktua getById(long id) {
-        return entityManager.find(Produktua.class, id);
+    public Produktuak getById(long id) {
+        return entityManager.find(Produktuak.class, id);
     }
 
     /**
      * Actualiza el us...uario proporcionado
      */
-    public void update(Produktua film) {
+    public void update(Produktuak film) {
         entityManager.merge(film);
         return;
     }
     
-    public void create(Produktua film) {
+    public void create(Produktuak film) {
         entityManager.persist(film);
         return;
     }

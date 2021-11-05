@@ -14,18 +14,18 @@ public class SalmentaDao {
      * Devuelve todos los usuarios de la base de datos.
      */
     @SuppressWarnings("unchecked")
-    public List<Salmenta> getAll() {
+    public List<Salmentak> getAll() {
     	return entityManager.createQuery("from Salmenta").getResultList();
     }
     
-    public Salmenta getById(long id) {
-        return entityManager.find(Salmenta.class, id);
+    public Salmentak getById(long id) {
+        return entityManager.find(Salmentak.class, id);
     }
 
     /**
      * Actualiza el us...uario proporcionado
      */
-    public void update(Salmenta film) {
+    public void update(Salmentak film) {
         entityManager.merge(film);
         return;
     }

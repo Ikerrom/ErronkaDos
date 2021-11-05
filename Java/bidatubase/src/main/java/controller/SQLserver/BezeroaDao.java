@@ -15,18 +15,18 @@ public class BezeroaDao {
      * Devuelve todos los usuarios de la base de datos.
      */
     @SuppressWarnings("unchecked")
-    public List<Bezeroa> getAll() {
+    public List<Bezeroak> getAll() {
     	return entityManager.createQuery("from Bezeroa").getResultList();
     }
     
-    public Bezeroa getById(long id) {
-        return entityManager.find(Bezeroa.class, id);
+    public Bezeroak getById(long id) {
+        return entityManager.find(Bezeroak.class, id);
     }
 
     /**
      * Actualiza el us...uario proporcionado
      */
-    public void update(Bezeroa film) {
+    public void update(Bezeroak film) {
         entityManager.merge(film);
         return;
     }

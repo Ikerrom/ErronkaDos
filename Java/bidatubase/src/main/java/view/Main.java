@@ -20,15 +20,11 @@ public class Main {
 		
 		ProduktuaDao sd = appContext.getBean(ProduktuaDao.class);
 		
-	/*	Produktua p = new Produktua();
-		p.setBolumena(2);
-		p.setDeskripzioa("");
-		p.setIzena("Aaa");
-		p.setPisua(2);
+		Produktuak p = new Produktuak();
 		p.setId(1);
-		sd.create(p);*/
 		
-		System.out.println(sd.getAll().size());
+		sd.update(p);
+		
 		
 		
 		

@@ -22,18 +22,18 @@ public class ErosketaDao {
      * Devuelve todos los usuarios de la base de datos.
      */
     @SuppressWarnings("unchecked")
-    public List<Erosketa> getAll() {
+    public List<Erosketak> getAll() {
     	return entityManager.createQuery("from Erosketa").getResultList();
     }
 
-    public Erosketa getById(long id) {
-        return entityManager.find(Erosketa.class, id);
+    public Erosketak getById(long id) {
+        return entityManager.find(Erosketak.class, id);
     }
 
     /**
      * Actualiza el us...uario proporcionado
      */
-    public void update(Erosketa film) {
+    public void update(Erosketak film) {
         entityManager.merge(film);
         return;
     }
